@@ -17,6 +17,11 @@ const OrderItem = ({ item, onDelete }) => {
       </View>
       <View style={styles.containerDetail}>
         <View style={styles.detail}>
+          {
+            item.items.map(items => (
+              <Text key={items.id} style={styles.itemsName}>{items.name} x{items.quantity}</Text>
+            ))
+          }
           <Text style={styles.detailTotal}>Total: ${item.total}</Text>
         </View>
         <TouchableOpacity onPress={() => onDelete(item.id)}>

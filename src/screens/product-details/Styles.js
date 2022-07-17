@@ -10,14 +10,23 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    imagen: {
+      height: '30%',
+      width: '90%',
+      borderRadius: 10,
+    },
     details: {
       height: height / 3,
       justifyContent: 'space-around',
       alignItems: 'center',
+      paddingHorizontal: 15,
     },
     name: {
       fontFamily: 'Lato-Bold',
       fontSize: 20,
+      textAlign: 'center',
+      marginBottom: 20,
+      paddingHorizontal: 20,
     },
     description: {
       fontFamily: 'Lato-Regular',

@@ -10,8 +10,9 @@ export const styles = StyleSheet.create({
   },
   headerContainer: {},
   header: {
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: "Lato-Bold",
+    textAlign: 'center',
   },
   containerDetail: {
     flex: 1,
@@ -20,9 +21,13 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  detail: {},
+  itemsName: {
+    marginLeft: 5,    
+  },
   detailTotal: {
     fontSize: 14,
-    fontFamily: "Lato-Regular",
+    fontFamily: "Lato-Bold",
+    marginLeft: 5, 
+    marginTop: 5,
   },
 });

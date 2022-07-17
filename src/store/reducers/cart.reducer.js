@@ -34,7 +34,12 @@ const cartReducer = (state = initialState, action) => {
                 items: filteredCart,
                 total: sumTotal(filteredCart),
             }
-        // case CONFIRM_CART:
+        case CONFIRM_CART:
+            return {
+                ...state,
+                items: [],
+                total: 0,
+            }
         default:
             return state;
     }

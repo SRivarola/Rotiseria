@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { OrderItem } from '../../components/index';
 import { useSelector, useDispatch } from 'react-redux';
-import { getOrders } from '../../store/actions/order.action';
+import { getOrders, deleteOrder } from '../../store/actions/order.action';
 import { styles } from './styles';
 
 const OrdersScreen = () => {
@@ -10,8 +10,8 @@ const OrdersScreen = () => {
     const dispatch = useDispatch();
     const orders = useSelector((state) => state.order.items)
 
-    const onDeleteOrder = () => {
-        console.log("delete order");
+    const onDeleteOrder = (id) => {
+        dispatch(deleteOrder(id))
     };
 
     const renderItem = ({ item }) => (
@@ -24,7 +24,8 @@ const OrdersScreen = () => {
 
     return (
         <View style={styles.container}>
-             <View style={styles.orderList}>
+            <Text style={styles.title}>My orders</Text>
+            <View style={styles.orderList}>
                 <FlatList
                     data={orders}
                     renderItem={renderItem}
